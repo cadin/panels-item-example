@@ -1,6 +1,8 @@
 local beepSound = playdate.sound.sampleplayer.new("audio/beep")
 local dropSound = playdate.sound.sampleplayer.new("audio/drop")
 
+-- `updateFunction` runs every frame
+-- while the panel is on screen
 local function checkForInput() 
 	if playdate.buttonJustPressed(Panels.Input.B) then
 		if Panels.vars.hasKey then
@@ -15,6 +17,8 @@ local function checkForInput()
 	end
 end
 
+-- `targetSequenceFunction` runs when the sequence ends 
+-- to determine which sequence to go to next
 local function getTargetSequence() 
 	if Panels.vars.hasKey then
 		return 4
@@ -23,8 +27,11 @@ local function getTargetSequence()
 	end
 end
 
+
+-- `renderFunction` is responsible for drawing every layer in the panel
+-- we can make that slightly easier by using `Panels.renderLayerInPanel`
+-- to do the heavy lifting
 local function renderPanel2(panel, offset)
-	
 	-- loop through every layer in the panel
 	for i, layer in ipairs(panel.layers) do
 		
@@ -61,6 +68,8 @@ s03 = {
 				{ text = "*Press B*", x = 50, y = 150 },
 				{ name="instructions", text = "To drop your key", x = 50, y = 180 },
 				
+				-- note the "name" properties here
+				-- I use those to figure out which layer I'm dealing with in my renderFunction
 				{ name="key", image = "key" },
 			},
 			renderFunction = renderPanel2,

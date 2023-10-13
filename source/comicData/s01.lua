@@ -6,7 +6,6 @@ local function checkForInput()
 	if playdate.buttonJustPressed(Panels.Input.A) then
 		Panels.vars.hasKey = true
 	end
-	return true
 end
 
 -- the `targetSequenceFunction` returns the next sequence to advance to
