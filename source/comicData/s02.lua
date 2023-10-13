@@ -1,6 +1,5 @@
-
-
 -- COMIC DATA 
+-- user ends up here if they progress past the locked door with no key
 
 s02 = { 
 	-- sequence 1

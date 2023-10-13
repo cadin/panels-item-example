@@ -12,19 +12,24 @@ Panels.credits = gameCredits
 
 -- COMIC DATA:
 -- add data to the table in this file to create your comic
-import "myComicData.lua"
-comicData = myComicData
+import "comicData/s01.lua"
+import "comicData/s02.lua"
+import "comicData/s03.lua"
+import "comicData/s04.lua"
 
-
--- EXAMPLES:
--- uncomment this file to have the example data used in the `start()` command
--- look in the `examples` folder for the data files
--- import "examples/comicData.lua"
-
+local comicData = {
+	s01,
+	s02,
+	s03,
+	s04
+}
 
 -- SETTINGS:
 -- change any settings before calling `start()`
 Panels.Settings.showMenuOnLaunch = true
+
+-- set this to false to retain global vars after user completes the game (default is true)
+-- Panels.Settings.resetVarsOnGameOver = false
 
 
 -- START:
