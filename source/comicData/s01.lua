@@ -8,13 +8,13 @@ local function checkForInput()
 	end
 end
 
--- the `targetSequenceFunction` returns the next sequence to advance to
--- we can use our global var to determine if they should go to sequence 2 or 3
+-- the `targetSequenceFunction` returns the id of the next sequence to advance to
+-- we can use our global var to determine if they should go to sequence the secret room or the dead end
 local function getTargetSequence() 
 	if Panels.vars.hasKey then
-		return 3
+		return "secret-room"
 	else
-		return 2
+		return "dead-end"
 	end
 end
 

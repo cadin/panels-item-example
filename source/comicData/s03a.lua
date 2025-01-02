@@ -1,3 +1,11 @@
+-- This example uses a custom render function to show how vars
+-- can be used within custom functions
+
+-- For simple applications, you can use a renderCondition
+-- directly in the layer data without needing custom functions
+-- see s03b for an example
+
+
 local beepSound = playdate.sound.sampleplayer.new("audio/beep")
 local dropSound = playdate.sound.sampleplayer.new("audio/drop")
 
@@ -21,9 +29,9 @@ end
 -- to determine which sequence to go to next
 local function getTargetSequence() 
 	if Panels.vars.hasKey then
-		return 4
+		return "game-won"
 	else 
-		return 2
+		return "dead-end"
 	end
 end
 
@@ -57,6 +65,7 @@ end
 
 s03 = { 
 	title = "Secret room",
+	id = "secret-room", -- we use this id to specify this sequence as a target from other sequences
 	panels = {
 		{ -- panel 1
 			layers = {

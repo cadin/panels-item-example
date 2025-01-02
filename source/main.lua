@@ -14,7 +14,8 @@ Panels.credits = gameCredits
 -- add data to the table in this file to create your comic
 import "comicData/s01.lua"
 import "comicData/s02.lua"
-import "comicData/s03.lua"
+-- import "comicData/s03a.lua"
+import "comicData/s03b.lua"
 import "comicData/s04.lua"
 
 local comicData = {

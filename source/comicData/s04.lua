@@ -1,4 +1,5 @@
 s04 = { 
+	id = "game-won",
 	panels = {
 		{ -- panel 1
 			layers = {

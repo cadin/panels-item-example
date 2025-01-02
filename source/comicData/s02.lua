@@ -4,6 +4,7 @@
 s02 = { 
 	-- sequence 1
 	title = "Dead End",	
+	id = "dead-end",  -- we use this id to specify this sequence as a target from other sequences
 	endSequence = true,
 	
 	panels = {
